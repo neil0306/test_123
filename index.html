@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Pages 测试页面</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 60px 0;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .feature h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+
+        .stat {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #667eea;
+            display: block;
+        }
+
+        .stat-label {
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            color: white;
+            opacity: 0.8;
+        }
+
+        .demo-section {
+            margin: 40px 0;
+        }
+
+        .demo-button {
+            margin: 10px;
+        }
+
+        .demo-output {
+            background: #f1f3f4;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            min-height: 60px;
+            border-left: 4px solid #667eea;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .card {
+                padding: 20px;
+                margin: 20px 0;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .stats {
+                flex-direction: column;
+            }
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+    
+    <div class="container">
+        <header class="header">
+            <h1>🚀 GitHub Pages 测试页面</h1>
+            <p>欢迎来到我的测试网站！这是一个部署在 GitHub Pages 上的示例页面。</p>
+        </header>
+
+        <div class="card">
+            <h2>🎯 页面功能展示</h2>
+            <p>这个页面展示了现代网页设计的各种元素和功能，包括响应式布局、动画效果、交互功能等。</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <span class="feature-icon">📱</span>
+                    <h3>响应式设计</h3>
+                    <p>完美适配各种设备尺寸，从手机到桌面电脑都有良好的显示效果。</p>
+                </div>
+                
+                <div class="feature">
+                    <span class="feature-icon">🎨</span>
+                    <h3>现代设计</h3>
+                    <p>采用现代化的设计语言，包括渐变背景、卡片布局和流畅的动画效果。</p>
+                </div>
+                
+                <div class="feature">
+                    <span class="feature-icon">⚡</span>
+                    <h3>快速加载</h3>
+                    <p>优化的代码结构，确保页面快速加载和流畅的用户体验。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📊 网站统计</h2>
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-number" id="visitors">1,234</span>
+                    <div class="stat-label">访问者</div>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="pageviews">5,678</span>
+                    <div class="stat-label">页面浏览量</div>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="uptime">99.9%</span>
+                    <div class="stat-label">正常运行时间</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🔧 交互功能演示</h2>
+            <div class="demo-section">
+                <button class="button demo-button" onclick="showMessage('你好！')">问候</button>
+                <button class="button demo-button" onclick="showTime()">显示时间</button>
+                <button class="button demo-button" onclick="generateRandom()">随机数</button>
+                <button class="button demo-button" onclick="changeColor()">变换颜色</button>
+                
+                <div class="demo-output" id="output">
+                    点击上面的按钮来测试交互功能！
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🌐 关于 GitHub Pages</h2>
+            <p>GitHub Pages 是一个免费的静态网站托管服务，可以直接从 GitHub 仓库部署网站。它支持：</p>
+            <ul style="margin: 20px 0; padding-left: 30px;">
+                <li>✅ 免费托管静态网站</li>
+                <li>✅ 自动部署和更新</li>
+                <li>✅ 支持自定义域名</li>
+                <li>✅ HTTPS 安全连接</li>
+                <li>✅ Jekyll 静态站点生成器</li>
+            </ul>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="https://pages.github.com/" class="button" target="_blank">了解更多</a>
+                <a href="https://github.com/" class="button" target="_blank">访问 GitHub</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 GitHub Pages 测试页面。部署时间：<span id="deploy-time"></span></p>
+        <p>🚀 成功部署到 GitHub Pages!</p>
+    </footer>
+
+    <script>
+        // 显示部署时间
+        document.getElementById('deploy-time').textContent = new Date().toLocaleString('zh-CN');
+
+        // 交互功能
+        function showMessage(message) {
+            document.getElementById('output').innerHTML = `<strong>消息:</strong> ${message} 👋`;
+        }
+
+        function showTime() {
+            const now = new Date().toLocaleString('zh-CN');
+            document.getElementById('output').innerHTML = `<strong>当前时间:</strong> ${now} ⏰`;
+        }
+
+        function generateRandom() {
+            const random = Math.floor(Math.random() * 1000) + 1;
+            document.getElementById('output').innerHTML = `<strong>随机数:</strong> ${random} 🎲`;
+        }
+
+        function changeColor() {
+            const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57', '#ff9ff3'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.getElementById('output').style.borderLeftColor = randomColor;
+            document.getElementById('output').innerHTML = `<strong>颜色已变换:</strong> ${randomColor} 🎨`;
+        }
+
+        // 主题切换功能
+        let isDarkTheme = false;
+        function toggleTheme() {
+            const body = document.body;
+            const button = document.querySelector('.theme-toggle');
+            
+            if (!isDarkTheme) {
+                body.style.background = 'linear-gradient(135deg, #2c3e50 0%, #34495e 100%)';
+                button.textContent = '☀️';
+                isDarkTheme = true;
+            } else {
+                body.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+                button.textContent = '🌙';
+                isDarkTheme = false;
+            }
+        }
+
+        // 数字动画效果
+        function animateNumber(element, target) {
+            let current = 0;
+            const increment = target / 50;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current).toLocaleString();
+            }, 30);
+        }
+
+        // 页面加载完成后启动动画
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                animateNumber(document.getElementById('visitors'), 1234);
+                animateNumber(document.getElementById('pageviews'), 5678);
+            }, 1000);
+        });
+
+        // 添加一些交互效果
+        document.addEventListener('DOMContentLoaded', () => {
+            // 为所有按钮添加点击效果
+            const buttons = document.querySelectorAll('.button');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    const ripple = document.createElement('span');
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+                    
+                    ripple.style.width = ripple.style.height = size + 'px';
+                    ripple.style.left = x + 'px';
+                    ripple.style.top = y + 'px';
+                    ripple.classList.add('ripple');
+                    
+                    this.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            });
+        });
+    </script>
+
+    <style>
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            transform: scale(0);
+            animation: ripple-animation 0.6s linear;
+            pointer-events: none;
+        }
+
+        @keyframes ripple-animation {
+            to {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+    </style>
+</body>
+</html>
